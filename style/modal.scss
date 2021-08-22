@@ -1,0 +1,105 @@
+// modal
+
+.modal {
+  width: 716px;
+  height: 444px;
+  display: block;
+  margin: 50% 0 0 -358px;
+  position: relative;
+  top: 50%; left: 50%;
+  background: #3B181E;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+
+  .body {
+    display: flex;
+  }
+
+  .content {
+    padding: 66px;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 1.1;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 15px;
+    margin-bottom: 27px;
+  }
+
+  input {
+    width: 100%;
+    display: block;
+    padding: 14px 20px;
+    border: 1px solid rgba(246, 246, 249, 0.2);
+    background: #3B181E;
+    margin-bottom: 16px;
+  }
+
+  input::placeholder {
+    color: white;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 27px;
+    cursor: pointer;
+  }
+}
+
+.btn-close {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+}
+
+.btn-close::before, .btn-close::after {
+  content: '';
+  width: 22px;
+  height: 1px;
+  display: block;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.btn-close::before {
+  margin-top: 12px;
+  transform: rotate(45deg);
+}
+
+.btn-close::after {
+  margin-top: -1px;
+  transform: rotate(-45deg);
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; left: 0;
+  background: rgba(52, 24, 30, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+  }
+
+  .modal {
+    margin-top: -222px;
+    opacity: 1;
+    z-index: 999;
+  }
+}
